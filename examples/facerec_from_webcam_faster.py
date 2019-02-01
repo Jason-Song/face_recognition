@@ -1,5 +1,7 @@
+#codeing: utf-8
 import face_recognition
 import cv2
+import ft2
 
 # This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
 # other example, but it includes some basic performance tweaks to make things run a lot faster:
@@ -21,14 +23,20 @@ obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 biden_image = face_recognition.load_image_file("biden.jpg")
 biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
+# Load a sample picture and learn how to recognize it.
+zysong_image = face_recognition.load_image_file("zysong.jpg")
+zysong_face_encoding = face_recognition.face_encodings(zysong_image)[0]
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
-    biden_face_encoding
+    biden_face_encoding,
+    zysong_face_encoding
 ]
 known_face_names = [
     "Barack Obama",
-    "Joe Biden"
+    "Joe Biden",
+    "宋子岳"
 ]
 
 # Initialize some variables
@@ -82,8 +90,11 @@ while True:
 
         # Draw a label with a name below the face
         cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
-        font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+        # font = cv2.FONT_HERSHEY_DUPLEX
+        # print(name)
+        ft = ft2.put_chinese_text('msyh.ttf')
+        frame = ft.draw_text(frame, (left+6 , bottom-30), name, 20, (255, 255, 255))
+        # cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
 
     # Display the resulting image
     cv2.imshow('Video', frame)
