@@ -1,4 +1,5 @@
 # Face Recognition
+![人脸识别中文示例](https://github.com/Jason-Song/readme-images/blob/master/face_recognition-video.gif)
 
 _You can also read a translated version of this file [in Chinese 简体中文版](https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md)._
 
@@ -113,16 +114,16 @@ While Windows isn't officially supported, helpful users have posted instructions
 
 ### Command-Line Interface
 
-When you install `face_recognition`, you get two simple command-line 
+When you install `face_recognition`, you get two simple command-line
 programs:
 
-* `face_recognition` - Recognize faces in a photograph or folder full for 
+* `face_recognition` - Recognize faces in a photograph or folder full for
    photographs.
 * `face_detection` - Find faces in a photograph or folder full for photographs.
 
 #### `face_recognition` command line tool
 
-The `face_recognition` command lets you recognize faces in a photograph or 
+The `face_recognition` command lets you recognize faces in a photograph or
 folder full  for photographs.
 
 First, you need to provide a folder with one picture of each person you
@@ -154,10 +155,10 @@ your folder of known people.
 
 #### `face_detection` command line tool
 
-The `face_detection` command lets you find the location (pixel coordinatates) 
+The `face_detection` command lets you find the location (pixel coordinatates)
 of any faces in an image.
 
-Just run the command `face_detection`, passing in a folder of images 
+Just run the command `face_detection`, passing in a folder of images
 to check (or a single image):
 
 ```bash
@@ -170,7 +171,7 @@ examples/image2.jpg,95,941,244,792
 
 It prints one line for each face that was detected. The coordinates
 reported are the top, right, bottom and left coordinates of the face (in pixels).
- 
+
 ##### Adjusting Tolerance / Sensitivity
 
 If you are getting multiple matches for the same person, it might be that
